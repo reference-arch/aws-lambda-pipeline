@@ -1,3 +1,6 @@
+test:
+    override:
+      - npm run coveralls
 deployment:
   master:
     branch: master
