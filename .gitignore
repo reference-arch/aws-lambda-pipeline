@@ -20,6 +20,4 @@ dist
 dist.zip
 
 # Lints and coverage
-.eslintrc
-.jscsrc
 coverage/
