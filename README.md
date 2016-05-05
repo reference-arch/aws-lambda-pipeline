@@ -1,7 +1,7 @@
-# Simple template for AWS Lambda with API
-Build status [![Circle CI](https://circleci.com/gh/davidtron/aws-lambda-pipeline/tree/master.svg?style=svg)](https://circleci.com/gh/davidtron/aws-lambda-pipeline/tree/master)
+# AWS REST Lambda Reference Architecture
 
 A simple and reproducible walkthrough to create a CORS enabled API backed by a nodejs function running on Amazon Lambda.
+
 The idea is to have as much of this configured programmatically (ie reproducible) and checked into version control.
 
 At present this relies on manually creating the API endpoint and lambda the first time before automating subsequent deployments.
