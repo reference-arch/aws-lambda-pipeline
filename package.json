@@ -1,37 +1,46 @@
 {
-  "name": "aws-lambda-pipeline",
+  "name": "lambda-pipeline-sample",
   "version": "0.0.1",
-  "description": "Template project for AWS Lambda and API",
+  "description": "Template project for AWS Lambda in NodeJS",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {},
   "devDependencies": {
+    "coveralls": "^2.7.0",
+    "eslint": "^1.7.3",
+    "eslint-config-gulp": "^2.0.0",
+    "jscs": "^2.3.5",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-install": "^0.6.0",
     "gulp-zip": "^3.0.2",
+    "mocha": "^2.0.1",
+    "mocha-lcov-reporter": "^0.0.1",
+    "should": "^5.0.1",
+    "istanbul": "^0.4.3",
     "node-aws-lambda": "^0.1.6",
     "run-sequence": "^1.1.5",
     "sinon": "^1.17.2",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "test": "node test/index-test.js"
+    "lint": "eslint . && jscs *.js test/",
+    "pretest": "npm run lint",
+    "test": "mocha --reporter spec",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidtron/aws-lambda-pipeline.git"
+    "url": "git+https://github.com/reference-arch/lambda-pipeline-sample.git"
   },
   "keywords": [
-    "AWS-Lambda",
-    "AWS-API"
+    "aws-lambda"
   ],
-  "author": "David Parry",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/davidtron/aws-lambda-pipeline/issues"
+    "url": "https://github.com/reference-arch/lambda-pipeline-sample/issues"
   },
-  "homepage": "https://github.com/davidtron/aws-lambda-pipeline#readme"
+  "homepage": "https://github.com/reference-arch/lambda-pipeline-sample#readme"
 }

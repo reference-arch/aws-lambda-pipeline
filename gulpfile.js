@@ -3,7 +3,7 @@ var zip = require('gulp-zip');
 var del = require('del');
 var install = require('gulp-install');
 var runSequence = require('run-sequence');
-var awsLambda = require("node-aws-lambda");
+var awsLambda = require('node-aws-lambda');
 
 gulp.task('clean', function() {
     return del(['./dist', './dist.zip']);
@@ -17,7 +17,7 @@ gulp.task('js', function() {
 gulp.task('node-mods', function() {
     return gulp.src('./package.json')
         .pipe(gulp.dest('dist/'))
-        .pipe(install({production: true}));
+        .pipe(install({ production: true }));
 });
 
 gulp.task('zip', function() {
@@ -27,7 +27,7 @@ gulp.task('zip', function() {
 });
 
 gulp.task('upload', function(callback) {
-    awsLambda.deploy('./dist.zip', require("./lambda-config.js"), callback);
+    awsLambda.deploy('./dist.zip', require('./lambda-config.js'), callback);
 });
 
 gulp.task('deploy', function(callback) {

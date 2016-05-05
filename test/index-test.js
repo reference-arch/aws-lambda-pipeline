@@ -1,38 +1,42 @@
 'use strict';
 
-var test = require('tape').test;
 var sinon = require('sinon');
-
+var should = require('should');
 var underTest = require('../index.js');
 
-test('test that succeed passes back json to context', function (assert) {
-    assert.plan(1);
+require('mocha');
+
+describe('when given a payload', function() {
+  it('should pass back json to context', function(done) {
 
     var event = {
-        "operation" : "succeed",
-        "payload" : {
-            "value1" : "some value 1",
-            "value2" : "some value 2"
+        'operation' : 'succeed',
+        'payload' : {
+            'value1' : 'some value 1',
+            'value2' : 'some value 2'
         }
     };
 
-    var context = { succeed: function (arg) {} };
-    var spy = sinon.spy(context, "succeed");
+    var context = { succeed: function () {} };
+    var spy = sinon.spy(context, 'succeed');
 
     underTest.handler(event, context);
 
-    assert.true(spy.withArgs(event.payload).calledOnce, "Succeed on context called with payload");
-});
+    should.exist(spy.withArgs(event.payload).calledOnce);
 
-test('test that fail records failure', function (assert) {
-    assert.plan(1);
+    done();
+  });
 
-    var event = { "unexpected" : "value" };
+  it('should record failure', function(done) {
+    var event = { 'unexpected' : 'value' };
 
-    var context = { fail: function (arg) {} };
-    var spy = sinon.spy(context, "fail");
+    var context = { fail: function () {} };
+    var spy = sinon.spy(context, 'fail');
 
     underTest.handler(event, context);
 
-    assert.true(spy.withArgs('failure occurred').calledOnce, "Succeed on context called with payload");
+    should.exist(spy.withArgs('failure occurred').calledOnce);
+
+    done();
+  });
 });
