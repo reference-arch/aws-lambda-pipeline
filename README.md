@@ -1,5 +1,7 @@
 # AWS REST Lambda Reference Architecture
 
+[![Circle CI](https://circleci.com/gh/reference-arch/lambda-pipeline-sample.svg?style=shield)](https://circleci.com/gh/reference-arch/lambda-pipeline-sample)
+
 A simple and reproducible walkthrough to create a CORS enabled API backed by a nodejs function running on Amazon Lambda.
 
 The idea is to have as much of this configured programmatically (ie reproducible) and checked into version control.
