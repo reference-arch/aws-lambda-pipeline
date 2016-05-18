@@ -1,7 +1,7 @@
 # AWS REST Lambda Reference Architecture
 
-[![Circle CI](https://circleci.com/gh/reference-arch/lambda-pipeline-sample.svg?style=shield)](https://circleci.com/gh/reference-arch/lambda-pipeline-sample)
-[![Coveralls](https://img.shields.io/coveralls/reference-arch/lambda-pipeline-sample/master.svg)](https://coveralls.io/r/reference-arch/lambda-pipeline-sample)
+[![Circle CI](https://circleci.com/gh/reference-arch/aws-lambda-pipeline.svg?style=shield)](https://circleci.com/gh/reference-arch/aws-lambda-pipeline)
+[![Coverage Status](https://coveralls.io/repos/github/reference-arch/aws-lambda-pipeline/badge.svg?branch=master)](https://coveralls.io/github/reference-arch/aws-lambda-pipeline?branch=master)
 [![Code Climate](https://codeclimate.com/github/reference-arch/aws-lambda-pipeline/badges/gpa.svg)](https://codeclimate.com/github/reference-arch/aws-lambda-pipeline)
 
 A simple and reproducible walkthrough to create a CORS enabled API backed by a nodejs function running on Amazon Lambda.
