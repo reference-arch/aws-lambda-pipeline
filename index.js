@@ -12,7 +12,7 @@ exports.handler = function(event, context) {
     // Written to cloudflare logs
     console.log('Received event:', JSON.stringify(event, null, 2));
     var operation = event.operation;
-    if (operation === 'succeed') {
+    if(operation === 'succeed') {
       context.succeed(event.payload);
     } else {
       context.fail('failure occurred');
